@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Alert Dialog Box</title>
+ <script type="text/javascript">
+   function testAlertDialog(grade) {
+     let message;
+     switch(grade) {
+       case 'A':
+         message = "First Class";
+         break;
+       case 'B':
+         message = "Second Upper Class";
+         break;
+       case 'C':
+         message = "Second Lower Class";
+         break;
+       case 'D':
+         message = "Third Class";
+         break;
+       case 'E':
+         message = "FAIL";
+         break;
+       default:
+         message = "Null!";
+         break;
+     }
+     alert(message);
+   }
+
+   // Call the function if grade is set
+   <?php
+     if (isset($_POST['submit'])) {
+       $a = $_POST['s'];
+       echo "window.onload = function() { testAlertDialog('$a'); };";
+     }
+   ?>
+ </script>
+</head>
+<body>
+   <form method="POST">
+   Enter the Grade:
+   <input type="text" name="s" size="1">
+   <input type="submit" name="submit" value="Press">
+   </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> </title>
+</head>
+<body>
+   <form method="POST">
+   Enter the Grade:
+   <input type="text" name="s" size="1">
+   <input type="submit" name="submit" value="Press">
+   </form>
+<?php
+  if(isset($_POST['submit'])){
+    $a=$_POST['s'];
+    switch($a){
+      case 'A':
+       echo "<script type='text/javascript'> alert('First Class');</script>";
+       break;
+      case 'B':
+       echo "<script type='text/javascript'> alert('Second Upper Class');</script>";
+       break;
+      case 'C':
+       echo "<script type='text/javascript'> alert('Second Lower Class');</script>";
+       break;
+      case 'D':
+       echo "<script type='text/javascript'> alert('Third Class');</script>";
+       break;
+      case 'E':
+       echo "<script type='text/javascript'> alert('FAIL');</script>";
+       break;
+      default:
+       echo "<script type='text/javascript'> alert('Null!');</script>";
+       break;
+    }
+  }
+?>
+</body>
+</html>
